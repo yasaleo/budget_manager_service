@@ -1,5 +1,6 @@
 package com.github.yasaleo.budgetmanager.budget_manager.auth.controller;
 
+import com.github.yasaleo.budgetmanager.budget_manager.auth.dto.LoginRequest;
 import com.github.yasaleo.budgetmanager.budget_manager.auth.dto.RegisterRequest;
 import com.github.yasaleo.budgetmanager.budget_manager.auth.service.AuthService;
 import org.springframework.http.ResponseEntity;
@@ -20,5 +21,10 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest registerRequest) {
         return authService.register(registerRequest);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
+        return authService.login(loginRequest);
     }
 }
